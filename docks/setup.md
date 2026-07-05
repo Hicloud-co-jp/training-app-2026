@@ -39,7 +39,7 @@ cd ~
 
 ### **リポジトリをクローン**
 ```bash
-git clone https://github.com/Hicloud-co-jp/training-app.git
+git clone git clone https://github.com/Hicloud-co-jp/training-app-2026.git
 ```
 
 認証情報の入力を求められた場合：
