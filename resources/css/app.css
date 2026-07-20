@@ -1,0 +1,7 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+body { min-height: 100vh; background: #f4f7fb; }
+.app-navbar { background: linear-gradient(120deg, #123b69, #176b87); }
+.page-card { border: 0; border-radius: 1rem; box-shadow: 0 .5rem 1.5rem rgba(21, 47, 76, .08); }
+.table thead th { white-space: nowrap; color: #476078; font-size: .875rem; }
+.employee-number { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-weight: 700; }
