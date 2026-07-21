@@ -2,7 +2,7 @@
 
 PHP 8.3、Laravel 12、Bootstrap 5で作成した、新入社員研修用の社員管理アプリです。
 
-既存アプリの調査と改修を通して、MVC、Eloquent、DB、外部API、ファイル出力、画像アップロードを段階的に学びます。新入社員はPowerShellからDocker Composeを使い、講師はLaravel Sailを体系的に学びます。
+既存アプリの調査と改修を通して、MVC、Eloquent、DB、外部API、ファイル出力、画像アップロードを段階的に学びます。新入社員はPowerShellからDocker Composeを使い、講師はLaravel Sailを体系的に学べます
 
 ## 最初に読む資料
 
