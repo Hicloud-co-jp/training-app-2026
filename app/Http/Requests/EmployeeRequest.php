@@ -5,13 +5,22 @@ namespace App\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
+/** 社員情報の登録・更新内容を検証するFormRequest */
 class EmployeeRequest extends FormRequest
 {
+    /** 認証済みの利用者だけにリクエストを許可 */
     public function authorize(): bool
     {
         return $this->user() !== null;
     }
 
+    /**
+     * 社員情報のバリデーションルール
+     *
+     * 更新時は、現在編集中の社員番号を重複チェックから除外します。
+     *
+     * @return array<string, array<int, mixed>>
+     */
     public function rules(): array
     {
         $employee = $this->route('employee');
@@ -29,6 +38,11 @@ class EmployeeRequest extends FormRequest
         ];
     }
 
+    /**
+     * バリデーションメッセージで使用する日本語項目名
+     *
+     * @return array<string, string>
+     */
     public function attributes(): array
     {
         return [

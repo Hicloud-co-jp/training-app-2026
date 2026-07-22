@@ -8,11 +8,17 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
+/**
+ * 社員情報を管理するEloquentモデル
+ *
+ * 社員番号、氏名、部署、入社日、メールアドレスを管理します。
+ */
 class Employee extends Model
 {
     /** @use HasFactory<EmployeeFactory> */
     use HasFactory, SoftDeletes;
 
+    /** 一括代入を許可する属性 */
     protected $fillable = [
         'employee_number',
         'name',
@@ -21,11 +27,17 @@ class Employee extends Model
         'email',
     ];
 
+    /**
+     * 属性の型変換設定
+     *
+     * @return array<string, string>
+     */
     protected function casts(): array
     {
         return ['joined_at' => 'date'];
     }
 
+    /** 社員番号・氏名・部署をキーワードで部分一致検索 */
     public function scopeSearch(Builder $query, ?string $keyword): Builder
     {
         $keyword = trim((string) $keyword);
@@ -41,6 +53,7 @@ class Employee extends Model
         });
     }
 
+    /** 指定された部署で完全一致検索 */
     public function scopeDepartment(Builder $query, ?string $department): Builder
     {
         $department = trim((string) $department);
